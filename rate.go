@@ -12,7 +12,7 @@ const (
 	maxCASAttempts = 10
 )
 
-// A RateLimiter manages limiting the rate of actions by key.
+// A RateLimiterCtx manages limiting the rate of actions by key.
 type RateLimiterCtx interface {
 	// RateLimit checks whether a particular key has exceeded a rate
 	// limit. It also returns a RateLimitResult to provide additional
@@ -159,7 +159,7 @@ func NewGCRARateLimiterCtx(st GCRAStoreCtx, quota RateQuota) (*GCRARateLimiterCt
 	}, nil
 }
 
-// RateLimit checks whether a particular key has exceeded a rate
+// RateLimitCtx checks whether a particular key has exceeded a rate
 // limit. It also returns a RateLimitResult to provide additional
 // information about the state of the RateLimiter.
 //
